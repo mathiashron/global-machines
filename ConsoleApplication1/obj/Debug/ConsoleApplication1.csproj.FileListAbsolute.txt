@@ -4,3 +4,9 @@ C:\global-machines\global-machines\ConsoleApplication1\bin\Debug\ConsoleApplicat
 C:\global-machines\global-machines\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
 C:\global-machines\global-machines\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\global-machines\global-machines\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+D:\Dropbox\Universidad\Tercer Cuatrimestre\Programacion 2\Programaciones\global-machinees\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Dropbox\Universidad\Tercer Cuatrimestre\Programacion 2\Programaciones\global-machinees\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\Dropbox\Universidad\Tercer Cuatrimestre\Programacion 2\Programaciones\global-machinees\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+D:\Dropbox\Universidad\Tercer Cuatrimestre\Programacion 2\Programaciones\global-machinees\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Dropbox\Universidad\Tercer Cuatrimestre\Programacion 2\Programaciones\global-machinees\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Dropbox\Universidad\Tercer Cuatrimestre\Programacion 2\Programaciones\global-machinees\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache

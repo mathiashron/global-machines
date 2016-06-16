@@ -34,6 +34,8 @@ namespace ConsoleApplication1
             public int producnivel;
             public int producprecio;
             public int descuento;
+            public int cantidad;
+
         };
         //enum tipo
         //{
@@ -93,7 +95,7 @@ namespace ConsoleApplication1
                         }
                     case 6:
                         {
-                            //Venta similar a tarea1
+                            printproductos();
                             break;
                         }
                     case 7:
@@ -111,6 +113,101 @@ namespace ConsoleApplication1
 
         }
 
+
+        static void printproductos()
+        {
+            int reg = 0, i;
+            int ID = 0;
+            Console.Clear();
+            Console.WriteLine("*_*Global Machines *_*");
+            Console.WriteLine("Ingrese el nombre del cliente:");
+            string nombre = Console.ReadLine();
+            Console.WriteLine("Ingrese el telefono:");
+            string telefono = Console.ReadLine();
+            Console.WriteLine("---Selección de productos---");
+            for (i = 0; i < Productos.Length; i++)
+            {
+                reg = i + 1;
+
+
+                Console.WriteLine(Productos[i].producid + ""+Productos[i].cantidad + " " + Productos[i].producname + "\t" + Productos[i].producprecio);
+            }
+            Console.WriteLine("Seleccione el ID del producto:");
+            int art = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese la Cantidad:");
+            int can = int.Parse(Console.ReadLine());
+            int monto = 0;
+            double porce = 0;
+            double montofinal = 0;
+            for (i = 0; i < Productos.Length; i++)
+            {
+                if (art == Productos[i].producid)
+                {
+                    
+                    monto = Productos[i].producprecio * can;
+                    if (Productos[i].producnivel >= 3)
+                    {
+                        if (Productos[i].productipo == "frituras")
+                        {
+                            porce = monto * 0.15;
+                            montofinal = monto - porce;
+                        }
+                        if (Productos[i].productipo == "reposteria")
+                        {
+                            porce = monto * 0.20;
+                            montofinal = monto - porce;
+                        }
+                        if (Productos[i].productipo == "refrescos gaseosos")
+                        {
+                            porce = monto * 0.5;
+                            montofinal = monto - porce;
+                        }
+                        if (Productos[i].productipo == "refrescos naturales")
+                        {
+                            porce = monto * 0.25;
+                            montofinal = monto - porce;
+                        }
+                        if (Productos[i].productipo == "confiteria")
+                        {
+                            porce = monto * 0.10;
+                            montofinal = monto - porce;
+                        }
+                    }
+
+
+
+                }
+            }
+
+            Console.WriteLine("El monto a pagar es de:");
+            Console.WriteLine(montofinal);
+            Console.WriteLine("ingrese con cuanto paga:");
+            int pago = int.Parse(Console.ReadLine());
+            double vuelto = pago - montofinal;
+            Console.WriteLine("Su vuelto es de:"+ vuelto);
+            
+            Console.WriteLine("su descuento fue de:" + porce);
+
+            //Console.WriteLine("=========================================");
+            //Console.WriteLine("       ** Global Machines **");
+            //Console.WriteLine("=========================================");
+            //Console.WriteLine("Factura Proforma N° 0001");
+            //Console.WriteLine("cliente:" + nombre);
+            //Console.WriteLine("Telefono:" + telefono);
+            //Console.WriteLine("_________________________________________");
+            //Console.WriteLine("item\tCtd\tPrecio\tSub Total");
+            //for (i = 0; i < Productos.Length; i++)
+            //{
+            //    if (art == Productos[i].producid)
+            //    {
+            //        Console.WriteLine(Productos[i].producname+ "\t" + can + "\t" + Productos[i].producprecio)
+
+
+
+
+            Console.Read();
+
+        }
 
         static void Addproductos()
         {
@@ -130,11 +227,7 @@ namespace ConsoleApplication1
                     Console.Write("Digite el nombre del articulo:    ");
                     Productos[i].producname = Console.ReadLine();
                     Console.Write("Digite el tipo: \n 1 - frituras \n 2 - reposteria \n 3 - refrescos gaseosos \n 4 - refrescos naturales \n 5 - confiteria \n ");
-                    //Console.Write(tipo.Frituras + ":" + (int)tipo.Frituras + "\n" +
-                    //              tipo.Reposteria + ":" + (int)tipo.Reposteria + "\n" +
-                    //              tipo.Refrestos_gaseosos + ":" + (int)tipo.Refrestos_gaseosos + "\n" +
-                    //              tipo.Refrescos_naturales + ":" + (int)tipo.Refrescos_naturales + "\n" +
-                    //              tipo.Confiteria + ":" + (int)tipo.Confiteria + "\n");
+                    
                     int tipo = int.Parse(Console.ReadLine());
 
                     if (tipo == 1)
@@ -162,10 +255,7 @@ namespace ConsoleApplication1
                         Productos[i].productipo = "confiteria";
                         confiteria = confiteria + 1;
                     }
-                    else
-                    {
-                        Productos[i].productipo = "Otros";
-                    }
+                    
                     
                     
                     Console.WriteLine("ingrese fecha de vencimiento:");
@@ -200,6 +290,8 @@ namespace ConsoleApplication1
                     Console.WriteLine("ingrese el precio:");
                     Productos[i].producprecio = int.Parse(Console.ReadLine());
                     Productos[i].descuento = 0;
+                    Console.WriteLine("Ingresa cantidad del producto");
+                    Productos[i].cantidad = int.Parse(Console.ReadLine());
                     Console.WriteLine("Desea agregar otro libro 0-Sí 1-No");
                     r = int.Parse(Console.ReadLine());
                     i++;
@@ -269,10 +361,7 @@ namespace ConsoleApplication1
                             Productos[i].productipo = "confiteria";
                             confiteria = confiteria + 1;
                         }
-                        else
-                        {
-                            Productos[i].productipo = "Otros";
-                        }
+                        
                         Console.WriteLine("ingrese fecha de vencimiento:");
                         Productos[i].producfecha = Console.ReadLine();
                         Console.WriteLine("ingrese nombre del proveedor:");

@@ -2,21 +2,21 @@
 Listado de Productos.             
 ===================================================================================
 Reg Codigo Nombre 	Tipo 	Vencimiento 	Proveedor 	Posicion 	Precio
-1 10 rrrr	Otros	25	rrr	1	6000
-2 0 				0	0
+1 10 aaaa	frituras	23	eeee	3	1000
+2 11 wwww	reposteria	23	eeeee	1	3000
 *-* Global Machines  *-*
 ================================
 Informe de inventario
 =================================
 Clasificacion       ||	 Cantidad
 Frituras            ||	1
-Reposteria          ||	0
+Reposteria          ||	1
 Refrescos Gaseosos  ||	0
 Refrescos Naturales ||	0
 Confiteria          ||	0
 Nivel               ||	 Cantidad
    1                ||	1
    2                ||	0
-   3                ||	0
+   3                ||	1
    4                ||	0
    5                ||	0
