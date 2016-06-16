@@ -1,0 +1,22 @@
+*-* Global Machines  *-*
+Listado de Productos.             
+===================================================================================
+Reg Codigo Nombre 	Tipo 	Vencimiento 	Proveedor 	Posicion 	Precio
+1 10 rrrr	Otros	25	rrr	1	6000
+2 0 				0	0
+*-* Global Machines  *-*
+================================
+Informe de inventario
+=================================
+Clasificacion       ||	 Cantidad
+Frituras            ||	1
+Reposteria          ||	0
+Refrescos Gaseosos  ||	0
+Refrescos Naturales ||	0
+Confiteria          ||	0
+Nivel               ||	 Cantidad
+   1                ||	1
+   2                ||	0
+   3                ||	0
+   4                ||	0
+   5                ||	0

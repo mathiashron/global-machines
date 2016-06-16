@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Text;
 
 namespace ConsoleApplication1
 {
@@ -323,6 +325,10 @@ namespace ConsoleApplication1
 
         static void Showproduc()
         {
+            string currentPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName);
+            Console.WriteLine(currentPath + @"\reporte.txt");
+
+            StreamWriter sw = new StreamWriter(currentPath + @"\reporte.txt");
             //listar productos
             int reg = 0, i;
             Console.Clear();
@@ -330,13 +336,17 @@ namespace ConsoleApplication1
             Console.WriteLine("Listado de Productos.             ");
             Console.WriteLine("===================================================================================");
             Console.WriteLine("Reg Codigo Nombre \tTipo \tVencimiento \tProveedor \tPosicion \tPrecio");
+            sw.WriteLine("*-* Global Machines  *-*");
+            sw.WriteLine("Listado de Productos.             ");
+            sw.WriteLine("===================================================================================");
+            sw.WriteLine("Reg Codigo Nombre \tTipo \tVencimiento \tProveedor \tPosicion \tPrecio");
             for (i = 0; i < Productos.Length; i++)
             {
                 reg = i +1 ;
                 
 
                 Console.WriteLine(reg+" " + Productos[i].producid + " " + Productos[i].producname + "\t" + Productos[i].productipo + "\t" + Productos[i].producfecha + "\t" + Productos[i].producproveedor + "\t" + Productos[i].producnivel + "\t" + Productos[i].producprecio);
-               
+                sw.WriteLine(reg + " " + Productos[i].producid + " " + Productos[i].producname + "\t" + Productos[i].productipo + "\t" + Productos[i].producfecha + "\t" + Productos[i].producproveedor + "\t" + Productos[i].producnivel + "\t" + Productos[i].producprecio);
             }
 
 
@@ -356,7 +366,23 @@ namespace ConsoleApplication1
             Console.WriteLine("   3                ||\t" + n3);
             Console.WriteLine("   4                ||\t" + n4);
             Console.WriteLine("   5                ||\t" + n5);
-            
+            sw.WriteLine("*-* Global Machines  *-*");
+            sw.WriteLine("================================");
+            sw.WriteLine("Informe de inventario");
+            sw.WriteLine("=================================");
+            sw.WriteLine("Clasificacion       ||\t Cantidad");
+            sw.WriteLine("Frituras            ||\t" + frituras);
+            sw.WriteLine("Reposteria          ||\t" + reposteria);
+            sw.WriteLine("Refrescos Gaseosos  ||\t" + rega);
+            sw.WriteLine("Refrescos Naturales ||\t" + rena);
+            sw.WriteLine("Confiteria          ||\t" + confiteria);
+            sw.WriteLine("Nivel               ||\t Cantidad");
+            sw.WriteLine("   1                ||\t" + n1);
+            sw.WriteLine("   2                ||\t" + n2);
+            sw.WriteLine("   3                ||\t" + n3);
+            sw.WriteLine("   4                ||\t" + n4);
+            sw.WriteLine("   5                ||\t" + n5);
+            sw.Close();
             
             Console.ReadKey();
 
